@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Menu Structure
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-template #menuitem let-item="item">
+    <ul>
+      <li *ngFor="let menu of item.menus; let i = index">
+        <label>{{menu.name}} - {{menu.id}}</label>
+        <ng-container *ngIf="menu.menus.length">
+          <ng-container *ngTemplateOutlet="menuitem; context: {item: menu}"> </ng-container>
+        </ng-container>
+      </li>
+    </ul>
+  </ng-template>
+  <ul>
+    <li *ngFor="let menu of rootMenus; let i = index">
+      <label>{{menu.name}} - {{menu.id}}</label>
+      <ng-container *ngIf="menu.menus.length">
+        <ng-container *ngTemplateOutlet="menuitem; context: {item: menu}"> </ng-container>
+      </ng-container>
+    </li>
+  </ul>
+</ion-content>
