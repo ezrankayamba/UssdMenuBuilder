@@ -10,16 +10,20 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { TreeviewModule } from "ngx-treeview";
+import { MenuFormPage } from "./menu-form/menu-form.page";
+import { FormsModule } from "@angular/forms";
+import { MenusService } from "./menus.service";
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, MenuFormPage],
+  entryComponents: [MenuFormPage],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    TreeviewModule.forRoot()
+    TreeviewModule.forRoot(),
+    FormsModule
   ],
   providers: [
     StatusBar,

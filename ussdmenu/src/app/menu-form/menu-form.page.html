@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Add menu under: {{parent.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input [(ngModel)]="model.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Text (SW)</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Text (EN)</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Order#</ion-label>
+    <ion-input type="number"></ion-input>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="dismiss()" color="light">Dismiss</ion-button>
+    <ion-button (click)="submit(model, parent, service)" color="primary" slot="end">Save Menu</ion-button>
+  </ion-toolbar>
+</ion-footer>

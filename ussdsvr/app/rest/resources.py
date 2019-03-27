@@ -16,4 +16,4 @@ class MenuResource(Resource):
         menu = Menu(name=name, parent_id=parent_id)
         db.session.add(menu)
         db.session.commit()
-        return {'result': 0, 'message': 'Success'}
+        return {'result': 0, 'message': 'Success', 'id': menu.id}

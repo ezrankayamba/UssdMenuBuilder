@@ -15,6 +15,7 @@ class Menu(db.Model):
     option = db.Column(db.Integer)
     parent_id = db.Column(db.Integer, db.ForeignKey('tbl_menu.id'),
                           nullable=True)
+    parent = db.relationship("Menu", back_populates="menus")
     menus = db.relationship('Menu', lazy=True)
 
     def __init__(self, name, parent_id=None):
